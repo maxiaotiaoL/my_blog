@@ -769,6 +769,14 @@ Branch master set up to track remote branch master from origin.
 
 把本地库的内容推送到远程，用`git push`命令，实际上是把当前分支`master`推送到远程。
 
+如果github中的README.md文件不在本地代码目录中，提交会报错，
+
+可以通过如下命令进行代码合并【注：pull=fetch+merge]
+
+```
+git pull --rebase origin master
+```
+
 由于远程库是空的，我们第一次推送`master`分支时，加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令。
 
 推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样：
